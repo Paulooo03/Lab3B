@@ -1,0 +1,17 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+Actor User
+
+User -> Search: Input URL
+Search -> history: Put search history in history label
+Search -> browser: Search URL in browser
+browser -> User: browser shows website according to URL input
+User -> VisitButton: Goes to the URL link contained in history
+VisitButton -> browser: VisitButton sends URL link to the browser
+browser -> User: Shows the website
+User -> backButton: Deletes most recent searched URL link
+backButton -> history: Replaces the most recent URL link in history to be deleted into an empty space
+
+@enduml
